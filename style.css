@@ -348,70 +348,87 @@ body {
     }
 
     /* ==========================================
-       UPDATED PLAYBAR FIXES FOR MOBILE SCREENS
+       FIXED PLAYBAR CSS FOR MOBILE
        ========================================== */
     .playbar {
-        width: 92%;               /* Side spacing fix */
-        bottom: 10px;
+        width: 92% !important;
+        bottom: 15px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 12px 15px;
+        padding: 12px 15px 20px 15px; /* Bottom padding seekbar ko andar rakhegi */
         font-size: 13px;
-        box-sizing: border-box;   /* Content border se bahar na nikle */
+        box-sizing: border-box !important;
+        position: fixed;
         
         display: flex;
-        flex-direction: column;  /* Top/Bottom structure banayega mobile par */
+        flex-direction: column; /* Components ko vertically stack karega */
         align-items: center;
-        gap: 10px;
-        min-height: auto;
-    }
-
-    /* Play/Pause/Prev/Next buttons alignment fix */
-    .songbuttons {
-        display: flex;
         justify-content: center;
-        align-items: center;      /* Is se play button neechy nahi jayega */
-        gap: 15px;
+        gap: 8px;
+        overflow: hidden; /* Excess element ko border se bahar jane se rokega */
     }
 
-    .songbuttons img {
-        cursor: pointer;
-    }
-
-    /* Song info text fix (Clips excess name overflow) */
+    /* 1. Song Info (Clip Text & Center) */
     .songinfo {
         width: 100%;
         text-align: center;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis;
+        text-overflow: ellipsis; /* Long name ... ban ke wrap hoga, cut nahi hoga */
+        margin: 0;
+        padding: 0 5px;
     }
 
-    /* Song time and volume alignment fix */
+    /* 2. Controls & Time/Volume Container */
     .timevol {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-direction: row;      /* Side-by-side cleanly fit ho sake */
         width: 100%;
-        gap: 8px;
+        gap: 5px;
+        flex-wrap: nowrap; /* Wrap hoke tootne nahi dega */
     }
 
-    /* Volume bar boundary fix */
+    .songbuttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* 3. Time Duration Text */
+    .songtime {
+        font-size: 11px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    /* 4. Volume Icon & Slider Fix */
     .volume {
         display: flex;
         align-items: center;
-        gap: 5px;
+        justify-content: flex-end;
+        gap: 4px;
     }
 
-    .volume range, 
-    .volume input {
-        max-width: 70px;          /* Volume slider ko playbar ke andar restrict rakhega */
+    .volume img {
+        width: 20px;
+        height: 20px;
     }
 
+    .volume input,
+    .volume range {
+        width: 50px !important; /* Slider fixed space me fit rahega */
+    }
+
+    /* 5. Seekbar Position Fix */
     .seekbar {
-        width: 100%;
-        margin-top: 5px;
+        width: 90%;
+        position: absolute;
+        bottom: 5px; /* Seekbar playbar ke lower rounded corner ke andar aayegi */
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
     }
 
     /* ========================================== */
@@ -436,4 +453,3 @@ body {
         display: block;
     }
 }
-
