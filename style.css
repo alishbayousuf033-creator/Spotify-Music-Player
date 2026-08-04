@@ -155,17 +155,22 @@ body {
     top: 135px;
 }
 
+
 .playbar {
     position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: invert(1);
-    border-radius: 30px;
+    bottom: 15px;
+    left: 25vw; /* Sidebar ke baad baqi screen ke center mein rakhne ke liye */
+    width: 72vw; /* Screen ke mutabiq perfect width */
     background-color: #dad5d5;
-    padding: 12px;
-    width: 70%;
-    min-height: 55px;
+    filter: invert(1);
+    border-radius: 20px;
+    padding: 12px 20px 20px 20px; /* Neeche seekbar ke liye space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+    box-sizing: border-box;
 }
 
 .songbuttons {
@@ -283,6 +288,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    border-radius: 8px;
 }
 
 .hamburger-container {
