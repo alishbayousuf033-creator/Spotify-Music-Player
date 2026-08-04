@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 👈 Ye layout ko tootne se bachayega */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Home, Search aur Library ke links ko thoda bold aur clean karne ke liye */
+.home ul li,
+.library .heading {
+    font-weight: 600;
+    /* Is se text thoda bold aur professional lagega */
+    font-size: 14px;
+    /* Spotify jaisa clean size */
+    cursor: pointer;
+}
+
+
+
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Main container jo left aur right panels ko jor ke rakhta hai */
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    /* Poori screen ki height */
+    overflow: hidden;
+    /* Bahar scroll aane se rokega */
+}
+
+.left {
+    width: 25vw;
+    min-width: 25vw;
+    height: 100vh;
+    /* Left panel poori screen ki height lega */
+    flex-shrink: 0;
+    display: flex;
+    /* 👈 Isko flexbox banayein */
+    flex-direction: column;
+    /* 👈 Taake home aur library upar-niche set rahein */
+}
+
+.right {
+    width: 75vw;
+    height: 100vh;
+    /* Screen ke barabar height */
+    overflow-y: auto;
+    /* Cards scroll karne par ye niche scroll hoga */
+    position: relative;
+}
+
+.footer {
+    color: grey;
+    font-size: 10px;
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 15px;
+    /* 👈 0 se badal kar 15px kar dein taake footer thoda upar aur pyara lage */
+}
+
+.footer a {
+    color: grey;
+
+}
+
+.library {
+    flex: 1;
+    /* 👈 Ye magic line library box ko stretch karke bilkul niche tak le jayegi! */
+    position: relative;
+    margin-bottom: 15px;
+    /* Niche se halka sa gap taake chipka hua na lage */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2d2929;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.header>* {
+    padding: 15px;
+}
+
+/* Nav ko flexbox banayein taake arrows aur buttons ek line me aa jayein */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* Taake ye poori width cover kare */
+}
+
+/* Signup aur Login buttons ko thoda door rakhne ke liye gap */
+.buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Buttons ki thodi si basic styling (Optional, jaisa Harry bhai aage sikhayenge) */
+.signupbtn {
+    background: none;
+    border: none;
+    color: #a7a7a7;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signupbtn:hover {
+    color: white;
+}
+
+.loginbtn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.spotifyPlaylists {
+    padding: 25px;
+}
+
+.cardContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 30px;
+    max-height: 70vw;
+
+
+}
+
+.card {
+    width: 230px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #181818;
+    position: relative;
+    transition: all .9s;
+}
+.card:hover {
+    background-color: #282828;
+    transform: scale(1.05);
+    /* 👈 Thoda zoom effect */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    /* 👈 Thoda shadow effect */
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.play {
+    position: absolute;
+    top: 150px;
+    /* 👈 Shuru mein thoda neeche rahega aur chupa hoga */
+    right: 17px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover .play {
+    opacity: 1;
+    top: 135px;
+    /* 👈 Hover par smooth slide up karega */
+}
+
+.playbar {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    filter: invert(1);
+    border-radius: 30px;
+    background-color: #dad5d5;
+    padding: 12px;
+    width: 70%;
+   min-height: 55px;
+}
+
+.songbuttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.songlist {
+    height: 550px;
+    /* 👈 List ko ek limit dega taake ye screen se bahar na nikle */
+    overflow-y: auto;
+    /* 👈 Jab gaane zyada honge toh vertical scrollbar aajaega */
+    margin-bottom: 44px;
+    /* 👈 Footer ke saath overlap hone se bachayega */
+}
+
+/* Scrollbar ko Spotify jaisa sleek/patla dikhane ke liye (Optional) */
+.songlist::-webkit-scrollbar {
+    width: 6px;
+}
+
+.songlist::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.songlist ul {
+    padding: 0 15px;
+}
+
+.songlist ul li {
+    list-style-type: decimal;
+    display: flex;
+    justify-content: space-between;
+    gap: 34px;
+    cursor: pointer;
+    padding: 12px 0px;
+    border: 1px solid white;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.hamburger {
+    display: none; /* Desktop par chhupane ke liye */
+}
+.close {
+    display: none; /* Desktop par chhupane ke liye */
+}
+
+/* .invert { */
+/* filter: invert(1); */
+/* } */
+.playNow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    /* Text aur Play Icon ke beech pyari si space ke liye */
+}
+
+.playNow span {
+    font-size: 15px;
+    /* Fixed width hata di hai taake text ek line mein aaye */
+    white-space: nowrap;
+    padding: 4px;
+    /* Padding kam ki hai taake button zyada bada na dikhe */
+}
+
+.seekbar {
+    height: 6px;
+    width: 98%;
+    background-color: black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+.circle {
+    position: relative;
+    bottom: 8px;
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 15px;
+    left: 0%;
+    transition: left 0.5s;
+}
+.songinfo, .songtime {
+    color: black;
+    padding: 0px 12px;
+   
+}
+.hidden {
+    display: none !important;
+}
+.volume {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    cursor: pointer;
+}
+.range input {
+    cursor: pointer;
+}
+.songtime {
+    width: 100px;
+    color: black;
+    padding: 0px 12px;
+}
+.timevol {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.abovebar {
+    display: flex;
+    justify-content: space-between;
+
+}
+@media (max-width: 1400px) {
+    .container {
+        flex-direction: column;
+    }
+    .left {
+        background-color: rgb(21, 21, 21);
+        position: absolute;
+        left: -110%;
+        transition: all 0.3s ease-in-out;
+        width: 400px;
+        z-index: 1;
+    }
+    .left .close {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        width: 29px;
+    }
+    .timevol {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .right {
+        width: 100vw;
+    }
+    .cardContainer {
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+       
+    }
+    .card {
+        width: 90vw;
+        margin: 30px 0;
+        
+    }
+    .right {
+        margin: 0;
+    }
+    .playbar {
+        width: 90%;            /* Mobile screens par screen ke edges ke mutabiq adjust hoga */
+        bottom: 15px;          /* Mobile par bottom gap kam kar diya */
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        font-size: 14px;
+       
+    
+    }
+    .songbuttons {
+        gap: 10px;
+        justify-content: space-around;
+    }
+    .seekbar {
+        width: 90%;
+    }
+    .hamburger {
+    display: block; /* Mobile par wapas show karne ke liye */
+  }
+  .close {
+    display: block; /* Mobile par wapas show karne ke liye */
+  }
+}
+.hamburger-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+@media (max-width: 400px) {
+    .card {
+        width: 100vw;
+    }
+}

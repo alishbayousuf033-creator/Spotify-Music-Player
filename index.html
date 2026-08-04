@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Web Player | Music for everyone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+</head>
+
+<body>
+    <div class="container flex bg-black">
+
+        <div class="left">
+            <div class="close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+            <div class="home bg-grey rounded m-1 p-1">
+                <div class="logo">
+                    <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_White.png"
+                        alt="Spotify Logo" width="120">
+                </div>
+
+                <ul>
+                    <li class="flex items-center gap-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 21V10.0714L12 3L20 10.0714V21H14V14H10V21H4Z" fill="#FFFFFF" stroke="#FFFFFF"
+                                stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                        <span>Home</span>
+                    </li>
+                    <li class="flex items-center gap-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="7" stroke="#FFFFFF" stroke-width="2" />
+                            <path d="M20 20L16 16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <span>Search</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="library bg-grey rounded m-1 p-1">
+                <h2> Your Library</h2>
+                <div class="songlist">
+                    <ul>
+
+                    </ul>
+                </div>
+                <div class="footer flex">
+                    <a href="https://www.spotify.com/legal">Legal</a>
+                    <a href="https://www.spotify.com/privacy">Safety & Privacy Center</a>
+                    <a href="https://www.spotify.com/privacy">Privacy Policy</a>
+                    <a href="https://www.spotify.com/legal/cookies-policy">Cookies</a>
+                    <a href="https://www.spotify.com/legal/privacy-policy/#s3">About Ads</a>
+                    <a href="https://www.spotify.com/accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+        <div class="right border bg-grey rounded m-1 p-1">
+
+            <div class="header">
+                <div class="nav">
+                    <div class="hamburger-container">
+
+
+                        <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35"
+                            height="35" color="#ffffff" fill="none">
+                            <path d="M4 18L20 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M4 12L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M4 6L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+
+                        <div class="arrows flex gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                color="#ffffff" fill="none">
+                                <path d="M15 19L8.00004 12L15 5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                color="#ffffff" fill="none">
+                                <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="signupbtn">Signup</button>
+                        <button class="loginbtn">Login</button>
+                    </div>
+                </div>
+            </div>
+            <div class="spotifyPlaylists">
+                <h1>Spotify Playlists</h1>
+
+                <!-- Ek hi main container banayein -->
+                <div class="cardContainer">
+
+                    <!-- Card 1 -->
+                    <div class="card" data-song="song1.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover1.jpg" alt="Cover Image">
+                        <h2>Qurban Ost</h2>
+                        <p>By Masroor Ali Khan</p>
+                    </div>
+
+                    <!-- Card 2 (Ab ye pehle wale ke barabar mein aayega) -->
+                    <div class="card" data-song="song2.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover2.jpg" alt="Cover Image">
+                        <h2>Me Phir Bhi Tumko Chahunga</h2>
+                        <p>By Arijit Singh</p>
+                    </div>
+                    <div class="card" data-song="song3.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover3.jpg" alt="Cover Image">
+                        <h2>Naqab</h2>
+                        <p>By Yashal Shahid</p>
+                    </div>
+                    <div class="card" data-song="song4.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover4.jpg" alt="Cover Image">
+                        <h2>Kahsara</h2>
+                        <p>By Abdul Hanan & Samar Jafri</p>
+                    </div>
+                    <div class="card" data-song="song5.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover5.jpg" alt="Cover Image">
+                        <h2>Jhol</h2>
+                        <p>By Mannu & Annural Khalid</p>
+                    </div>
+                    <div class="card" data-song="song6.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover6.jpg" alt="Cover Image">
+                        <h2>Iqtidar</h2>
+                        <p>By Arshman Khan & Farukh Mehervi</p>
+                    </div>
+                    <div class="card" data-song="song7.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover7.png" alt="Cover Image">
+                        <h2>Guzarishen</h2>
+                        <p>By Samar Jafri</p>
+                    </div>
+                    <div class="card" data-song="song8.mp3" >
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover8.jpg" alt="Cover Image">
+                        <h2>Bharas</h2>
+                        <p>By Yashal Shahid & Adnan Dhool</p>
+                    </div>
+                    <div class="card" data-song="song9.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover9.jpg" alt="Cover Image">
+                        <h2>Meem Sy Muhabbat</h2>
+                        <p>By Asim Azhar & Qirat haider</p>
+                    </div>
+                    <div class="card" data-song="song10.mp3">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="56" height="56"
+                                fill="none">
+                                <!-- Green Background Circle -->
+                                <circle cx="12" cy="12" r="10" fill="#1fdf64" />
+                                <!-- Black Play Icon (Filled and Centered) -->
+                                <path d="M10 8L15.5 12L10 16V8Z" fill="#000000" />
+                            </svg>
+                        </div>
+                        <img src="pictures/cover10.jpg" alt="Cover Image">
+                        <h2>Adawat</h2>
+                        <p>By Natasha Baig & Adnan Dhool</p>
+                    </div>
+
+
+                </div> <!-- Container yahan band hoga -->
+            </div>
+            <div class="playbar">
+                <div class="seekbar">
+                    <div class="circle"></div>
+                </div>
+                <div class="abovebar">
+
+
+                    <div class="songinfo">
+
+                    </div>
+                    <div class="songbuttons">
+                        <svg id="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"
+                            color="black" fill="none">
+                            <path d="M7.5 6V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M17 6L10.5 10.875C9.83333 11.375 9.83333 12.625 10.5 13.125L17 18V6Z"
+                                stroke="currentColor" stroke-width="1.5" fill="currentColor" stroke-linejoin="round" />
+                        </svg>
+
+                        <!-- Master Play/Pause Container (ID `play` ab div par he) -->
+                        <div id="play" style="display: flex; align-items: center; cursor: pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"
+                                color="black" fill="none">
+                                <path d="M15.75 12L8.25 16.5V7.5L15.75 12Z" stroke="currentColor" stroke-width="1.5"
+                                    fill="currentColor" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                        <svg id="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"
+                            color="black" fill="none">
+                            <path d="M16.5 6V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M7 6L13.5 10.875C14.1667 11.375 14.1667 12.625 13.5 13.125L7 18V6Z"
+                                stroke="currentColor" stroke-width="1.5" fill="currentColor" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="timevol">
+                        <div class="songtime">
+
+
+                        </div>
+                        <div class="volume">
+                            <!-- Volume High SVG -->
+                            <svg class="invert volume-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                            </svg>
+
+                            <!-- Mute SVG (Mute Icon ka code direct add kar diya hai) -->
+                            <svg class="invert mute-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                <line x1="23" y1="9" x2="17" y2="15"></line>
+                                <line x1="17" y1="9" x2="23" y2="15"></line>
+                            </svg>
+
+
+                            <div class="range">
+                                <input type="range" name="volume" id="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <script src="script.js"></script>
+</body>
+
+</html>
