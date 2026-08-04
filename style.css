@@ -295,19 +295,22 @@ body {
 /* ==========================================
    MEDIA QUERIES (RESPONSIVENESS FIXES)
    ========================================== */
-
 @media (max-width: 1400px) {
     .container {
         flex-direction: column;
     }
 
+    /* 1. Left Sidebar Width & Display Fix */
     .left {
         background-color: rgb(21, 21, 21);
         position: absolute;
         left: -110%;
         transition: all 0.3s ease-in-out;
-        width: 320px;
+        width: 85vw !important; /* Mobile par width extend kar di hai */
+        max-width: 350px !important;
+        height: 100vh;
         z-index: 10;
+        padding: 10px;
     }
 
     .left .close {
@@ -315,8 +318,28 @@ body {
         top: 20px;
         right: 25px;
         width: 29px;
+        cursor: pointer;
     }
 
+    /* 2. Song List & Scroll Fix inside Sidebar */
+    .songlist {
+        height: calc(100vh - 220px) !important; /* Screen size ke hisab se height dynamic rahegi */
+        overflow-y: auto !important;
+        margin-bottom: 20px !important;
+    }
+
+    .songlist ul li {
+        gap: 10px !important;
+        padding: 10px !important;
+        align-items: center !important;
+    }
+
+    .playNow span {
+        font-size: 13px !important;
+        padding: 0 !important;
+    }
+
+    /* 3. Main Body & Cards Adjustment */
     .right {
         width: 100vw;
         margin: 0;
@@ -338,12 +361,17 @@ body {
         display: block;
     }
 
-    /* PLAYBAR MOBILE STYLING */
+    /* 4. Playbar CSS (Preserved & Fixed) */
     .playbar {
         width: 92% !important;
         bottom: 12px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
         padding: 10px 12px 22px 12px !important;
         font-size: 12px !important;
+        box-sizing: border-box !important;
+        position: fixed !important;
+        z-index: 5;
     }
 
     .abovebar {
