@@ -300,17 +300,18 @@ body {
         flex-direction: column;
     }
 
-    /* 1. Left Sidebar Width & Display Fix */
+    /* 1. Left Sidebar Fix (Width 85vw width space degi taake text na toote) */
     .left {
         background-color: rgb(21, 21, 21);
         position: absolute;
         left: -110%;
         transition: all 0.3s ease-in-out;
-        width: 85vw !important; /* Mobile par width extend kar di hai */
-        max-width: 350px !important;
+        width: 85vw !important;
+        max-width: 380px !important;
         height: 100vh;
         z-index: 10;
         padding: 10px;
+        box-sizing: border-box;
     }
 
     .left .close {
@@ -321,25 +322,45 @@ body {
         cursor: pointer;
     }
 
-    /* 2. Song List & Scroll Fix inside Sidebar */
+    /* 2. Song List Limit (Footer ya Playbar par overlap hone se rokega) */
     .songlist {
-        height: calc(100vh - 220px) !important; /* Screen size ke hisab se height dynamic rahegi */
+        height: calc(100vh - 250px) !important;
+        max-height: 500px !important;
         overflow-y: auto !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 50px !important;
     }
 
+    /* Song cards ki padding aur text adjustment */
     .songlist ul li {
         gap: 10px !important;
-        padding: 10px !important;
+        padding: 10px 8px !important;
         align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .playNow {
+        gap: 4px !important;
+        flex-shrink: 0;
     }
 
     .playNow span {
-        font-size: 13px !important;
+        font-size: 12px !important;
         padding: 0 !important;
     }
 
-    /* 3. Main Body & Cards Adjustment */
+    /* Footer Position inside sidebar */
+    .footer {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        z-index: 2;
+        background-color: rgb(21, 21, 21);
+        width: 90%;
+    }
+
+    /* 3. Main Area & Playbar */
     .right {
         width: 100vw;
         margin: 0;
@@ -361,7 +382,7 @@ body {
         display: block;
     }
 
-    /* 4. Playbar CSS (Preserved & Fixed) */
+    /* Playbar Mobile Layout (Exact Working Alignment) */
     .playbar {
         width: 92% !important;
         bottom: 12px !important;
@@ -420,7 +441,6 @@ body {
         transform: translateX(-50%) !important;
     }
 }
-
 @media (max-width: 400px) {
     .card {
         width: 100vw;
